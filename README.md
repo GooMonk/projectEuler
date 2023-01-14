@@ -15,4 +15,4 @@ Each problem directory should have minimum two files:
 
 ## Contributing
 
-Anyone who is interested in implementing the Go versions of the Project Euler problems can feel free to contribute. One can add tests or alternative solutions for the problems.
+Please review the [CONTRIBUTING.md](https://github.com/GooMonk/projectEuler/blob/master/CONTRIBUTING.md) for the tools which are advised to be used when contributing in this repository.
