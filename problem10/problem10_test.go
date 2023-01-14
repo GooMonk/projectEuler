@@ -9,7 +9,7 @@ func TestPrimeSum(test *testing.T) {
 	testResult := PrimeSum(2000000)
 	test.Logf("The result of the method call is: %d", testResult)
 	if testResult != 142913828922 {
-		test.Errorf("The result is not as expected for the input (600851475143). Expected result: 6857")
+		test.Errorf("The result is not as expected for the input (2000000). Expected result: 142913828922")
 	}
 
 	testResult2 := PrimeSum(10)
