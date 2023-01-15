@@ -3,7 +3,7 @@ package problem3
 import "testing"
 
 func TestLargestPrimeFactor(test *testing.T) {
-	// Unit Testcase: 1 : Project EulerProblem statement
+	// Unit Testcase: 1 : Project Euler Problem statement
 	testResult := LargestPrimeFactor(600851475143)
 	test.Logf("The result of the method call is: %d", testResult)
 	if testResult != 6857 {

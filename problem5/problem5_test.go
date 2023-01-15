@@ -6,7 +6,7 @@ import (
 )
 
 func TestPrimeSum(test *testing.T) {
-	// Unit Testcase: 1 : Project EulerProblem statement
+	// Unit Testcase: 1 : Project Euler Problem statement
 	testResult := SmallestMultiple(20)
 	test.Logf("The result of the method call is: %d", testResult)
 	if testResult != 232792560 {
@@ -27,12 +27,12 @@ func TestPrimeSum(test *testing.T) {
 
 	testResult4 := SmallestMultiple(3)
 	test.Logf("The result of the method call is: %d", testResult4)
-	if testResult4 != 3 {
-		test.Errorf("The result is not as expected for the input (3). Expected result: 3")
+	if testResult4 != 6 {
+		test.Errorf("The result is not as expected for the input (3). Expected result: 6")
 	}
 }
 
-func BenchmarkXxx(ben *testing.B) {
+func BenchmarkPrimeSum(ben *testing.B) {
 	inputs := []int64{20, 10, -5, 2}
 	outputs := []int64{232792560, 2520, -1, 2}
 	for j := 0; j < len(inputs); j++ {
