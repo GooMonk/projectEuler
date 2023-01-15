@@ -22,7 +22,7 @@ func SmallestMultiple(n int64) int64 {
 		return -1
 	}
 
-	if n < 4 {
+	if n < 3 {
 		return n
 	}
 
