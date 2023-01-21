@@ -15,6 +15,17 @@ func sumN(n int64) int64 {
 	return res
 }
 
+func gcd(a, b int64) int64 {
+	if b == 0 {
+		return a
+	}
+	return gcd(b, a%b)
+}
+
+func lcm(a, b int64) int64 {
+	return ((a * b) / gcd(a, b))
+}
+
 // Generic implementation of the problem statement where the function takes 3 arguments a,b and n and returns the sum of all the multiples of a and b less than n.
 func MultipleSum(a, b, n int64) int64 {
 	var res int64
@@ -33,8 +44,9 @@ func MultipleSum(a, b, n int64) int64 {
 	} else {
 		x := n / a
 		y := n / b
-		z := n / (a * b)
-		res = (a * sumN(x)) + (b * sumN(y)) - ((a * b) * sumN(z))
+		lcmxy := lcm(a, b)
+		z := n / lcmxy
+		res = (a * sumN(x)) + (b * sumN(y)) - (lcmxy * sumN(z))
 	}
 	return res
 }

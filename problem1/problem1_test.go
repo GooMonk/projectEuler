@@ -30,3 +30,24 @@ func TestMultipleSum(test *testing.T) {
 		test.Errorf("The result is not as expected for the input (-5, 5, 10). Expected result: -1")
 	}
 }
+
+func TestMultipleSumUpdated(test2 *testing.T) {
+	//Cases where one of the input number is a factor of the other number
+	testResult := MultipleSum(2, 8, 1000)
+	test2.Logf("The result of the method call is: %d", testResult)
+	if testResult != 249500 {
+		test2.Errorf("The result is not as expected for the input (2, 8, 1000). Expected result: 249500")
+	}
+
+	testResult2 := MultipleSum(30, 15, 31)
+	test2.Logf("The result of the method call is: %d", testResult2)
+	if testResult2 != 45 {
+		test2.Errorf("The result is not as expected for the input (30, 15, 31). Expected result: 45")
+	}
+
+	testResult3 := MultipleSum(1000, 100, 1000)
+	test2.Logf("The result of the method call is: %d", testResult3)
+	if testResult3 != -1 {
+		test2.Errorf("The result is not as expected for the input (1000, 100, 1000). Expected result: -1")
+	}
+}
