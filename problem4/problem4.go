@@ -30,10 +30,13 @@ func LargestPalindromeProduct(n int8) int64 {
 
 	for i = high; i >= low; i-- {
 		for j = i; j >= low; j-- {
-			if isPalindrome(i * j) {
-				if (i * j) > maxpro {
-					maxpro = i * j
+			product := i * j
+			if product > maxpro {
+				if isPalindrome(product) {
+					maxpro = product
 				}
+			} else {
+				break
 			}
 		}
 	}
