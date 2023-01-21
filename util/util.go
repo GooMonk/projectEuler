@@ -17,6 +17,13 @@ func Gcd(a, b int64) int64 {
 	return Gcd(b, a%b)
 }
 
+func IterativeGcd(a, b int64) int64 {
+	for b != 0 {
+		a, b = b, a%b
+	}
+	return a
+}
+
 func Lcm(a, b int64) int64 {
 	return ((a * b) / Gcd(a, b))
 }
