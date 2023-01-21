@@ -1,19 +1,12 @@
 package problem5
 
+import util "projectEuler/util"
+
 /*
 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 */
-
-func pow(a, b int64) int64 {
-	var res int64 = 1
-	var i int64
-	for i = 0; i < b; i++ {
-		res *= a
-	}
-	return res
-}
 
 // Generic Implementation which returns smallest number that can be divided by each of the numbers from 1 to n.
 func SmallestMultiple(n int64) int64 {
@@ -67,7 +60,7 @@ func SmallestMultiple(n int64) int64 {
 	}
 	for number, exponent := range numberOfFact {
 		if number > 0 && exponent > 0 {
-			res *= (pow(int64(number), exponent))
+			res *= (util.Pow(int64(number), exponent))
 		}
 	}
 	return res

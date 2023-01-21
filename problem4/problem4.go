@@ -1,21 +1,12 @@
 package problem4
 
+import util "projectEuler/util"
+
 /*
 Problem Statement: A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 */
-
-func isPalindrome(n int64) bool {
-	var nrev, ntemp int64 = 0, n
-
-	for ntemp > 0 {
-		nrev = 10*nrev + (ntemp % 10)
-		ntemp /= 10
-	}
-	return (nrev == n)
-
-}
 
 // Generic Implementation which finds the largest palindrome product made by two n-digit numbers.
 func LargestPalindromeProduct(n int8) int64 {
@@ -32,7 +23,7 @@ func LargestPalindromeProduct(n int8) int64 {
 		for j = i; j >= low; j-- {
 			product := i * j
 			if product > maxpro {
-				if isPalindrome(product) {
+				if util.IsPalindrome(product) {
 					maxpro = product
 				}
 			} else {

@@ -1,5 +1,7 @@
 package problem10
 
+import util "projectEuler/util"
+
 /*
 Problem Statement: The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
@@ -17,20 +19,9 @@ func PrimeSum(n int64) int64 {
 	}
 
 	// Implementation using Sieve of Eratosthenes
-	var res, i, j int64
+	var res int64
 
-	var notPrime []bool = make([]bool, n)
-
-	notPrime[0] = true
-	notPrime[1] = true
-
-	for i = 2; i*i < n; i++ {
-		if !notPrime[i] {
-			for j = i * i; j < n; j += i {
-				notPrime[j] = true
-			}
-		}
-	}
+	var notPrime []bool = util.Sieve(n - 1)
 
 	for number, isNotPrime := range notPrime {
 		if !isNotPrime {

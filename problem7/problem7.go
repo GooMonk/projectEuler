@@ -1,29 +1,15 @@
 package problem7
 
-import "math"
+import (
+	"math"
+	util "projectEuler/util"
+)
 
 /*
 Problem Statement: By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
 What is the 10 001st prime number?
 */
-
-func sieve(n int64) []bool {
-	var i, j int64
-	var notPrime []bool = make([]bool, n+1)
-
-	notPrime[0] = true
-	notPrime[1] = true
-
-	for i = 2; i*i <= n; i++ {
-		if !notPrime[i] {
-			for j = i * i; j <= n; j += i {
-				notPrime[j] = true
-			}
-		}
-	}
-	return notPrime
-}
 
 // Generic Implementation where for a the given number n, the function returns the nth prime. If not found returns -1
 func NthPrime(n int64) int64 {
@@ -52,7 +38,7 @@ func NthPrime(n int64) int64 {
 			upperLimit = approxLimit
 		}
 	}
-	result := sieve(upperLimit)
+	result := util.Sieve(upperLimit)
 
 	i = 1
 	for number, isNotPrime := range result {
